@@ -1,0 +1,38 @@
+#education {
+    background: radial-gradient(circle at 20% 80%, rgba(47, 219, 17, 0.679) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(129, 152, 38, 0.19) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 176, 120, 0.556) 0%, transparent 50%),
+        linear-gradient(135deg, #fafcff 0%, #e2e1c3 100%);
+}
+
+#education h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.education-item {
+    background: white;
+    padding: 2rem;
+    margin: 1rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    max-width: 800px;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+}
+
+.education-item h3 {
+    color: #27ae60;
+    margin-bottom: 0.5rem;
+}
+
+.education-item p {
+    margin-bottom: 0.5rem;
+    color: #5a6c7d;
+}
+

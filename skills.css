@@ -1,0 +1,50 @@
+#skills {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(131, 73, 193, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(75, 48, 101, 0.288) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(142, 37, 81, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+#skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+    background: #3498db;
+    color: white;
+}
+
+.skill-item h3 {
+    margin-bottom: 1rem;
+    color: #9b59b6;
+}
+
+.skill-item:hover h3 {
+    color: white;
+}
