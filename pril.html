@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Eprilvia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="pril.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <h1 class="logo">Eprilvia</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-image">
+        <img src="pril.jpg" alt="Foto Eprilvia" />
+      </div>
+
+      <div class="hero-text">
+        <h3>Holla everyone!!!, I’m...</h3>
+        <h1>Eprilvia</h1>
+        <p>Nice to meet you all !!!</p>
+        <div class="hero-buttons">
+          <a href="#about" class="btn primary">About Me</a>
+          <a href="#contact" class="btn outline">Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about container">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I'm a student at <strong>President University</strong> majoring in Information Technology.
+        I enjoy learning new technologies and creating digital projects. Let’s know me better with my portfolio about myself and a little bit of my achievements so far.
+      </p>
+    </div>
+
+    <div class="about-hobbies">
+      <h3>Things I Love</h3>
+      <div class="hobby-list">
+        <span>Doing Sports</span>
+        <span>Playing Games</span>
+        <span>Keeping Animals</span>
+        <span>Listening to Music</span>
+        <span>Singing</span>
+        <span>Dancing</span>
+        <span>Watching Films</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="education container">
+    <h2>Education Background</h2>
+    <ul class="timeline">
+      <li><strong>Wahidin Kindergarten</strong> — Early Childhood Education</li>
+      <li><strong>Wahidin Elementary School</strong> — Primary Education</li>
+      <li><strong>Wahidin Junior High School</strong> — Secondary Education</li>
+      <li><strong>Wahidin Senior High School</strong> — High School</li>
+    </ul>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="experience container">
+    <h2>Experiences & Achievements</h2>
+
+    <div class="exp-grid">
+      <div class="card">
+        <h3>Marching Band Wahidin (MBPW)</h3>
+        <p class="year">2022 - 2024</p>
+        <ul>
+          <li>3rd place at Indonesia Independence Day Carnival</li>
+          <li>1st place at Indonesia Independence Day Carnival</li>
+          <li>1st place — Opening Carnival of the 41st & 42nd MTQ</li>
+          <li>2nd place — Marching Band Competition of the 23rd Rohil Anniversary</li>
+          <li>Runner-up — 24th Rohil Anniversary Competition</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Chairperson — SMAS WAHIDIN Student Council</h3>
+        <p class="year">2022/2023 - 2023/2024</p>
+        <ul>
+          <li>Organized annual school events (Teacher’s Day, Independence Day, Religious Days)</li>
+          <li>Managed tournaments, batch videos, and graduation events</li>
+          <li>Hosted the 1st Student Mobile Legends Tournament (2022)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Tutor — Alvaro Education Center</h3>
+        <p class="year">2022 - 2024</p>
+        <ul>
+          <li>Level 1 & 2 English classes</li>
+          <li>Office Computer classes</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Vice Captain — Wahidin Girls Basketball Team</h3>
+        <p class="year">2020 - 2025</p>
+        <ul>
+          <li>Runner Up — Riau Pos-Honda Student Basketball League</li>
+          <li>Runner Up — 3x3 Vesak Friendship Competition (2023)</li>
+          <li>Winner — Wahidin Anniversary Celebration Competition</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact container">
+    <h2>Contact Me</h2>
+    <p>If you'd like to collaborate, need tutoring, or want to invite me to events — feel free to reach out!</p>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <h4>Email</h4>
+        <a href="mailto:eprilvia@example.com">eprilvia1804@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <h4>Phone</h4>
+        <a href="tel:+6281234567890">+62 853-7655-3723</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Eprilvia — Built with ❤️ and passion.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
