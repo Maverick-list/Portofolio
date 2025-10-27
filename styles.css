@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"); /* Pastikan ikon RMX di-import */
+
+/* Menambahkan efek gulir yang halus ke seluruh halaman */
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+  /* Warna Dasar */
+  --primary-color: #1e4384; /* Biru Tua */
+  --primary-color-dark: #134767;
+  --secondary-color: #1e4384; /* Emas */
+  
+  /* Teks & Latar Belakang */
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --extra-light: #faf5ff; /* Hero Background */
+  --section-bg: #eef1f5; /* Latar belakang abu-abu terang */
+  --dark-sidebar: #3b5c7d; /* Warna gelap sidebar */
+
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+  font-family: "Poppins", 'Montserrat', sans-serif;
+  background-color: var(--section-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Base Headings */
+h1 { font-weight: 700; color: var(--text-dark); }
+h2 { font-weight: 600; color: var(--primary-color-dark); }
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.nav__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Hamburger Menu Toggle (Mobile Only) */
+nav .checkbox {
+  display: block; /* Tampilkan di mobile */
+}
+
+nav input {
+  display: none;
+}
+
+nav .checkbox i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Menu List (Mobile Styling) */
+nav ul {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 65px);
+  left: -100%; /* Sembunyikan ke kiri */
+  top: 65px; 
+  background-color: #ffffff;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  transition: left 0.3s;
+}
+
+nav #check:checked ~ ul {
+  left: 0; /* Tampilkan menu */
+}
+
+nav ul li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+.section {
+  padding-top: 5rem;
+  background-color: var(--extra-light);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr; /* Default 1 kolom di mobile */
+  gap: 3rem;
+  text-align: center;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.title span {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.description {
+  line-height: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.action__btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.action__btns button {
+  padding: 1rem 2rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hire__me {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+.hire__me:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.portfolio {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+.portfolio:hover {
+  background-color: var(--primary-color-dark);
+  color: #ffffff;
+}
+
+.image {
+  order: -1; /* Gambar di atas teks di mobile */
+  display: grid;
+  place-items: center;
+}
+
+.image img {
+  max-width: 80%; /* Fluid */
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--primary-color);
+}
+
+.main-profile {
+    display: flex;
+    flex-direction: column; /* Stacked di mobile */
+    max-width: var(--max-width);
+    margin: 40px auto;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 100%; 
+    padding: 30px;
+    background-color: var(--dark-sidebar); 
+    color: white;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 5px solid var(--secondary-color);
+}
+
+.sidebar h2 {
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+.sidebar .role {
+    font-style: italic;
+    color: #bdc3c7;
+}
+
+
+/* Content Area */
+.content-area {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.intro h1 {
+    font-size: 1.8rem;
+    border-bottom: 3px solid var(--primary-color-dark);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.content-area h2 {
+    margin-top: 30px;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.skill-tag {
+    background-color: #e7f3fd;
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 700;
+}
+
+.soft-skills ul {
+    padding-left: 20px;
+    list-style-type: '👉 ';
+}
+
+.cta {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--extra-light);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.section-padding {
+    padding: 60px 1rem;
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 kolom di mobile */
+    gap: 20px;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.project-link {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.contact-section {
+    padding: 60px 1rem;
+    background-color: var(--section-bg);
+}
+
+.contact-card {
+    background-color: var(--dark-sidebar);
+    color: white;
+    padding: 30px 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.card-full-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.contact-info {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 260px;
+    margin: 20px auto 0;
+}
+
+.contact-info hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 5px 0;
+}
+
+.email-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+    display: block;
+    transition: color 0.3s;
+}
+.email-link:hover {
+    color: white;
+}
+.linkedin, .Whatsapp {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* Tablet Layout (Lebar >= 750px) */
+@media (min-width: 750px) {
+  /* NAVIGASI */
+  nav .checkbox {
+    display: none;
+  }
+  nav ul {
+    position: static;
+    display: flex; /* Tampilkan menu horizontal */
+    width: auto;
+    height: auto;
+    left: auto;
+    top: auto;
+    background-color: transparent;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  /* HERO SECTION */
+  .section__container {
+    padding: 5rem 1rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    text-align: left;
+  }
+  
+  .image {
+    order: 2; /* Pindah gambar ke kanan */
+  }
+  
+  .content {
+    order: 1;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .action__btns {
+    justify-content: flex-start;
+  }
+  
+  /* PORTFOLIO */
+  .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+  }
+}
+
+/* Desktop Layout (Lebar >= 1024px) */
+@media (min-width: 1024px) {
+    /* HERO SECTION */
+    .section__container {
+      gap: 5rem;
+    }
+
+    /* MAIN PROFILE / ABOUT */
+    .main-profile {
+        flex-direction: row; /* Sidebar di kiri, Konten di kanan */
+    }
+    
+    .sidebar {
+        width: 350px; /* Lebar sidebar yang lebih tegas */
+    }
+
+    /* PORTFOLIO */
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    }
+}
