@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    :root {
+      --bg-light: #f9f9f9;
+      --bg-dark: #121212;
+      --text-light: #222;
+      --text-dark: #f1f1f1;
+      --primary: #2563eb;
+      --card-bg-light: #fff;
+      --card-bg-dark: #1f1f1f;
+    }
+
+    /* === GLOBAL STYLE === */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* === HEADER === */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--primary);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    #goblok {
+      font-size: 2.5rem;
+      font-family: 'Trebuchet MS', sans-serif;
+      margin: 0.5rem 0;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #d0d0d0;
+    }
+
+    /* === HERO === */
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* === SECTION CONTAINER === */
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 12px;
+      background: var(--card-bg-light);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    section h3 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    /* === IMAGES === */
+    .image-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 2rem 0;
+    }
+
+    img {
+      width: 330px;
+      height: auto;
+      border-radius: 12px;
+      border: 3px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* === ANIMATION FOR TOP IMAGES === */
+    .top-images img {
+      animation: slideX 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes slideX {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(15px); }
+      100% { transform: translateX(0); }
+    }
+
+    /* === CONTACT FORM === */
+    .contact-section {
+      text-align: center;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 1rem auto;
+      max-width: 500px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .contact-form button {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #1e50d5;
+    }
+
+    /* === SOCIAL ICONS === */
+    .social-section {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .social-links img {
+      width: 40px;
+      height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .social-links img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--primary);
+      color: #fff;
+      margin-top: 3rem;
+    }
+
+    /* === RESPONSIVE BREAKPOINTS === */
+
+    @media (max-width: 1024px) {
+      #goblok {
+        font-size: 2.2rem;
+      }
+      img {
+        width: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #goblok {
+        font-size: 2rem;
+      }
+
+      nav {
+        gap: 15px;
+      }
+
+      img {
+        width: 90%;
+        max-width: 280px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #goblok {
+        font-size: 1.8rem;
+      }
+
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .social-links img {
+        width: 30px;
+      }
+
+      section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="goblok">My Portfolio</h1>
+    <nav id="blowon">
+      <a href="#about">About</a>
+      <a href="#MyProjects">Projects</a>
+      <a href="#certificates">Achievements</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Hello, I'm Firza 👋</h2>
+    <p>A passionate learner in technology, design, and public speaking. Welcome to my portfolio!</p>
+  </section>
+
+  <!-- 🔥 Tiga foto teratas dengan animasi -->
+  <div class="image-row top-images">
+    <img src="Formal 1.JPG" alt="Formal 1">
+    <img src="98faab8d-93d7-46bb-82e7-e3bc7f07240c.JPG" alt="Formal 2">
+    <img src="IMG_20251018_184216.jpg" alt="Informal">
+  </div>
+
+  <section id="about">
+    <h3>Personal Identity</h3>
+    <p>
+      My name is Firza Miftahul Ilmi. I am a tech enthusiast, content creator, and someone who enjoys learning languages 
+      and presenting ideas in public. With a background in Informatics (batch 2025), I focus on combining creativity 
+      with technology to create impactful projects. 
+    </p>
+
+    <h3>CV</h3>
+    <div class="image-row">
+      <img src="CV Firza Miftahul Ilmi_page-0001.jpg" alt="CV">
+    </div>
+  </section>
+
+  <section id="MyProjects">
+    <h3>💻 My Projects</h3>
+    <div class="image-row">
+      <img src="Project 1.jpg" alt="Project 1">
+      <img src="Project 2.jpg" alt="Project 2">
+      <img src="Project 3.jpg" alt="Project 3">
+    </div>
+  </section>
+
+  <section id="certificates">
+    <h3>🏆 Certificates</h3>
+    <div class="image-row">
+      <img src="966b0782-628e-404f-8dbe-2248a4b1c098.JPG" alt="Certificate 1">
+      <img src="LBFT Juara 1 umum 2023 (1).jpg" alt="Certificate 2">
+      <img src="Firza OSMID_page-0001.jpg" alt="Certificate 3">
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h3>Contact Me</h3>
+    <p>Feel free to reach out through this form or via my social media.</p>
+
+    <form class="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="social-section">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/firza-ilmi-8912b936b/">
+          <img src="linkedin-logo-linkedin-icon-transparent-free-png-removebg-preview.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/maverick_list/">
+          <img src="ig-removebg-preview.png" alt="Instagram">
+        </a>
+        <a href="https://github.com/Maverick-list">
+          <img src="github-removebg-preview.png" alt="GitHub">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Firza Miftahul Ilmi - Portfolio</p>
+  </footer>
+</body>
+</html>
